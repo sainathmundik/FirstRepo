@@ -1,1 +1,49 @@
 //write the program of stack data structure in java
+
+public class Stack {
+    private int[] data;
+    private int top;
+
+    public Stack(int size) {
+        data = new int[size];
+        top = -1;
+    }
+
+    public void push(int value) {
+        if (top == data.length - 1) {
+            System.out.println("Stack overflow");
+            return;
+        }
+        top++;
+        data[top] = value;
+    }
+
+    public int pop() {
+        if (top == -1) {
+            System.out.println("Stack underflow");
+            return -1;
+        }
+        int value = data[top];
+        top--;
+        return value;
+    }
+
+    public int peek() {
+        if (top == -1) {
+            System.out.println("Stack is empty");
+            return -1;
+        }
+        return data[top];
+    }
+
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    public boolean isFull() {
+        return top == data.length - 1;
+    }
+}
+```
+
+This program defines a `Stack` class with a constructor that takes a size parameter to initialize the array. The `push` method adds an element to the top of the stack, while the `pop` method removes and returns the top element. The `peek` method returns the top element without removing it. The `isEmpty` and `isFull` methods check if the stack is empty or full, respectively.
